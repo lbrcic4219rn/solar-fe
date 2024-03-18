@@ -1,0 +1,15 @@
+<div class="scene">
+  <div class="carousel" style="position: relative">
+    <div #carousel__cell *ngFor="let i of [0, 1, 2, 3, 4, 5, 6, 7, 8]" class="carousel__cell" [ngStyle]="getStyle(i)">
+      <button class="btn btn-primary">Test{{i}}</button>
+    </div>
+  </div>
+</div>
+<button (click)="prev()">prev</button>
+<button (click)="next()">next</button>
+<input
+  type="checkbox"
+  id="horizontal"
+  [ngModel]="isHorizontal"
+  (ngModelChange)="isHorizontal = $event; orientationChange()"
+/><label for="horizontal">Horizontal</label>
